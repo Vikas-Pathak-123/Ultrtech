@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
-function App() {
+import Navbar from "./components/Navbar/Navbar";
+import SlideDrawr from "./components/Navbar/SlideDrawr";
+import Header from "./components/Navbar/Header";
+import Footer from "./components/Footer/Footer";
+import { Route, Routes } from "react-router-dom";
+import InitialPage from "./pages/InitialPage";
+
+
+const App = () => {
+  const [isHalfScreen, setIsHalfScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsHalfScreen(window.innerWidth <= 1260);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        {isHalfScreen ? (
+          <SlideDrawr />
+        ) : (
+          <>
+            <Header /> <Navbar />
+          </>
+        )}
+      </nav>
+
+          <Routes>
+            <Route path="/" element={<InitialPage/>} />
+          </Routes>
+
+     <Footer/>
+    </>
   );
-}
+};
 
 export default App;

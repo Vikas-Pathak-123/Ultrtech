@@ -1,0 +1,226 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-top: #ec1f25 solid 5px;
+  margin: 0;
+  font-size: smaller;
+  padding: 10px;
+  background: white;
+  /* Additional CSS properties for the header container */
+}
+
+.header li {
+  display: inline;
+  padding: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: medium;
+  /* Additional CSS properties for the link elements */
+}
+/* ============================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  padding: 20px 100px 20px 80px;
+}
+
+.logo {
+  width: 15%;
+  /* border: #ec1f25 solid 2px; */
+}
+
+.navtabs {
+  width: 85%;
+  /* border: green solid 2px; */
+  display: flex;
+  justify-content: space-around;
+  font-size: small;
+}
+
+.navtabs a {
+  text-decoration: none;
+  color: white;
+}
+.navtabs a:hover {
+  color: white;
+}
+
+.navlink {
+  background-color: #333;
+  text-align: center;
+  width: 17%;
+  height: fit-content;
+  padding: 15px;
+  transition: background-color 0.5s ease;
+  position: relative;
+}
+.navlink:hover {
+  background: #ec1f25;
+  color: #fff;
+}
+
+.tooltip {
+  width: 300%;
+  height: 40px;
+  position: absolute;
+  bottom: -95px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  background-color: #fff;
+  background-image: url("../../images/megamenu-bg-map.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px 0px 20px 60px;
+  /* border: #ec1f25 solid 2px; */
+  border-radius: 60px;
+  opacity: 0;
+  color: #000;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.navlink:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+.tooltip a {
+  text-decoration: none;
+  color: black;
+}
+.flex img {
+  width: 40px;
+}
+
+.triangleUp {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid whitesmoke;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Responsive Styles */
+/* @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navtabs {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .navlink {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+} */
+
+/* ========================= */
+
+/* global css */
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 10;
+  top: 1;
+  right: 0; /* Modified to open from right to left */
+  background-color: #111;
+  overflow-x: hidden;
+  transition: width 1s ease; /* Added transition effect */
+  padding: 10px 20px;
+  margin-top: 40px;
+  border-top: #ec1f25 solid 5px;
+}
+.sidenavHide {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  margin-right: -50px;
+  top: 1;
+  right: 0; /* Modified to open from right to left */
+  background-color: #111;
+  overflow-x: hidden;
+  transition: width 1s ease; /* Added transition effect */
+  padding: 10px 20px;
+  margin-top: 40px;
+  border-top: #ec1f25 solid 5px;
+}
+
+.sidenav li {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: red;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.navToggleBtn {
+  position: absolute;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.navToggleBtnCross {
+  position: absolute;
+  font-size: 36px;
+  margin-left: 10px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.navContainerToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  padding: 20px;
+}

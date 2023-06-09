@@ -1,0 +1,30 @@
+.imageChanger{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    /* border: red 10px solid; */
+}
+
+.divContainer{
+    background: #000;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.textContainer{
+    width:50%
+}
+.btnRedGradient{
+    width: 300px;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 20px;
+    background: linear-gradient(to right, #fd050d 20%, black);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
